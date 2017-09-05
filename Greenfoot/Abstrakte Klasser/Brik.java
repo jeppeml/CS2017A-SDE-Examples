@@ -1,0 +1,31 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Brik here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public abstract class Brik extends Actor
+{
+    public String farve = "";
+    /**
+     * Act - do whatever the Brik wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    
+    public void setFarve(String far)
+    {
+        farve = far;
+    }
+    
+    public String getFarve()
+    {
+        return farve;
+    }
+    
+    public void act() 
+    {
+        // Add your action code here.
+    }    
+}
