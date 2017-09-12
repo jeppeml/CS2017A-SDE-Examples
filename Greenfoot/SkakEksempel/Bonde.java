@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bonde extends Brik
 {
+    private boolean harFlyttetSig=false;
+    
     public Bonde(String farven)
     {
         super.farve=farven;
@@ -27,6 +29,30 @@ public class Bonde extends Brik
      */
     public void act() 
     {
+        if(Greenfoot.mouseClicked(this))
+        {
+            int flytAntal = 0;
+            if(!harFlyttetSig)
+                {
+                    flytAntal = 2;
+                }
+                else
+                {
+                    flytAntal = 1;
+                }
+                
+            
+            if(farve=="HVID")
+            {
+                this.setLocation(getX(),getY()+flytAntal);
+                harFlyttetSig=true;
+            }
+            else
+            {
+                this.setLocation(getX(),getY()-flytAntal);
+                harFlyttetSig=true;
+            }
+        }
         // Add your action code here.
     }    
 }
