@@ -1,0 +1,11 @@
+#Greenfoot properties
+#Tue Sep 12 10:50:52 CEST 2017
+class.Bane.superclass=greenfoot.World
+mainWindow.width=850
+class.StartBane.superclass=greenfoot.World
+project.charset=UTF-8
+version=3.0.0
+world.lastInstantiated=Bane
+mainWindow.y=40
+mainWindow.x=40
+mainWindow.height=600
