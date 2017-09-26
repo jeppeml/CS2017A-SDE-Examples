@@ -26,6 +26,8 @@ public class NewWindowController implements Initializable
     private ToggleGroup grpAlder;
     @FXML
     private Label lblValg;
+    @FXML
+    private Label lblName;
 
     /**
      * Initializes the controller class.
@@ -41,6 +43,11 @@ public class NewWindowController implements Initializable
     {
         RadioButton rb = (RadioButton)grpAlder.getSelectedToggle();
         lblValg.setText(rb.getText());
+    }
+    
+    public void changeName(String name)
+    {
+        lblName.setText(name);
     }
     
 }
