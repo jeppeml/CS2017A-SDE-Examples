@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="windowsradiobtnsharing.NewWindowController">
+   <children>
+      <RadioButton layoutX="144.0" layoutY="64.0" mnemonicParsing="false" text="10-15">
+         <toggleGroup>
+            <ToggleGroup fx:id="grpAlder" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="144.0" layoutY="96.0" mnemonicParsing="false" text="16-21" toggleGroup="$grpAlder" />
+      <RadioButton layoutX="144.0" layoutY="132.0" mnemonicParsing="false" text="gammel" toggleGroup="$grpAlder" />
+      <RadioButton layoutX="144.0" layoutY="166.0" mnemonicParsing="false" text="olding" toggleGroup="$grpAlder" />
+      <Label layoutX="144.0" layoutY="33.0" text="Alder:" />
+      <Label layoutX="186.0" layoutY="301.0" text="Du valgte" />
+      <Label fx:id="lblValg" layoutX="260.0" layoutY="301.0" text="Ingenting" />
+      <Button layoutX="62.0" layoutY="296.0" mnemonicParsing="false" onAction="#clickSubmit" text="Submit" />
+   </children>
+</AnchorPane>

@@ -11,28 +11,36 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 /**
+ * FXML Controller class
  *
  * @author jeppjleemoritzled
  */
-public class FXMLDocumentController implements Initializable
+public class NewWindowController implements Initializable
 {
-    
+
     @FXML
-    private Label label;
-    
+    private ToggleGroup grpAlder;
     @FXML
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
+    private Label lblValg;
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         // TODO
     }    
+
+    @FXML
+    private void clickSubmit(ActionEvent event)
+    {
+        RadioButton rb = (RadioButton)grpAlder.getSelectedToggle();
+        lblValg.setText(rb.getText());
+    }
     
 }
