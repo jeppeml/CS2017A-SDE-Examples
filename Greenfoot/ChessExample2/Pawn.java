@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pawn extends ChessPiece
 {
-
-    
     public Pawn(String chessPieceColor)
     {
         super(chessPieceColor);
@@ -20,7 +18,7 @@ public class Pawn extends ChessPiece
         }
         else
         {
-             this.setImage("baby2.png"); 
+            this.setImage("baby2.png"); 
         }
     }
     

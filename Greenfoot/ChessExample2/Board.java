@@ -15,9 +15,8 @@ public class Board extends World
      */
     public Board() 
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(8, 8, 100); 
-        getBackground().scale(800, 800);
+        super(8, 8, 700/8); 
+        getBackground().scale(700, 700);
         for(int i=0;i<8;i++)
         {
             this.addObject(new Pawn("WHITE"), i, 1); 
