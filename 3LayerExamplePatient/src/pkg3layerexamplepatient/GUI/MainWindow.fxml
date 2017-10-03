@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="389.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg3layerexamplepatient.GUI.MainWindowController">
+   <children>
+      <TableView fx:id="tablePatients" layoutX="10.0" layoutY="9.0" onMouseClicked="#clickRow" prefHeight="371.0" prefWidth="668.0">
+        <columns>
+          <TableColumn fx:id="columnName" prefWidth="231.0" text="Navn" />
+          <TableColumn fx:id="columnEmail" minWidth="0.0" prefWidth="436.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
