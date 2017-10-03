@@ -67,6 +67,9 @@ public class MainWindowController implements Initializable
         
         PatientViewController controller =
                 fxLoader.getController();
+        Patient selectedPatient = 
+                tablePatients.getSelectionModel().getSelectedItem();
+        controller.loadPatient(selectedPatient);
         Stage stage = new Stage(); // new window
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -74,8 +77,6 @@ public class MainWindowController implements Initializable
         stage.initModality(Modality.WINDOW_MODAL);
         
         stage.show();
-        
-        System.out.println("Hej");
     }
     
 }
