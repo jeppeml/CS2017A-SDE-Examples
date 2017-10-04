@@ -18,30 +18,15 @@ import javafx.collections.ObservableList;
  */
 public class DataManager {
     
+    PatientReader preader;
+    
+    public DataManager(PatientReader preader)
+    {
+        this.preader = preader;
+    }
+    
     public ObservableList<Patient> getAllPatients()
     {
-        ObservableList<Patient> data = FXCollections.observableArrayList();
-
-        try (BufferedReader CSVFile = new BufferedReader(new FileReader("MOCK_DATA.csv"))) 
-        {
-            String dataRow = CSVFile.readLine();
-            dataRow = CSVFile.readLine(); // Skip header
-            while (dataRow != null) {
-                String[] dataArray = dataRow.split(",");
-                data.add(new Patient(
-                        Integer.parseInt(dataArray[0]),
-                        dataArray[1],
-                        dataArray[2],
-                        dataArray[3])
-                );
-                dataRow = CSVFile.readLine(); // Read next line of data.
-            }
-            return data;
-        }
-        catch(IOException ioe)
-        {
-            System.out.println("IO exception in DataManager: Returning null!" + ioe);
-            return null;
-        }
+        return preader.getAllPatients();
     }
 }

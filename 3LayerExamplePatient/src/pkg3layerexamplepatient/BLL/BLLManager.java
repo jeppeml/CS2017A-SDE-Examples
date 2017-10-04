@@ -7,7 +7,9 @@ package pkg3layerexamplepatient.BLL;
 
 import javafx.collections.ObservableList;
 import pkg3layerexamplepatient.BE.Patient;
+import pkg3layerexamplepatient.DAL.CSVPatientReader;
 import pkg3layerexamplepatient.DAL.DataManager;
+import pkg3layerexamplepatient.DAL.TestReader;
 
 /**
  *
@@ -15,7 +17,8 @@ import pkg3layerexamplepatient.DAL.DataManager;
  */
 public class BLLManager
 {
-    DataManager dm = new DataManager();
+    DataManager dm = new DataManager(new CSVPatientReader());
+    
     public ObservableList<Patient> getAllPatients()
     {
         return dm.getAllPatients();
