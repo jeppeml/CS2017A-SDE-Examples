@@ -18,6 +18,30 @@ public class Patient
     private String email;
     private String diagnosis;
     
+     private String address;
+
+    /**
+     * Get the value of address
+     *
+     * @return the value of address
+     */
+    public String getAddress()
+    {
+        return address;
+    }
+
+    /**
+     * Set the value of address
+     *
+     * @param address new value of address
+     */
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+
+    
     public Patient(int id, String name, String email, String diagnosis)
     {
         this.id = id;
