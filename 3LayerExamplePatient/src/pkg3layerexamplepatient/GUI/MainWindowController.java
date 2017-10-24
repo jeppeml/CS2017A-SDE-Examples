@@ -8,11 +8,13 @@ package pkg3layerexamplepatient.GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -37,6 +39,10 @@ public class MainWindowController implements Initializable
     private TableColumn<Patient, String> columnEmail;
     
     BLLManager bllManager = new BLLManager();
+    @FXML
+    private Button btn1;
+    @FXML
+    private Button btn2;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -77,6 +83,13 @@ public class MainWindowController implements Initializable
         stage.initModality(Modality.WINDOW_MODAL);
         
         stage.show();
+    }
+
+    @FXML
+    private void clickBtn(ActionEvent event)
+    {
+        if(event.getSource()==btn1)
+            System.out.println("Weee");
     }
     
 }
