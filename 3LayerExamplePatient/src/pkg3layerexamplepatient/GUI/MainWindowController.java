@@ -39,6 +39,7 @@ public class MainWindowController implements Initializable
     private TableColumn<Patient, String> columnEmail;
     
     BLLManager bllManager = new BLLManager();
+    
     @FXML
     private Button btn1;
     @FXML
@@ -90,6 +91,11 @@ public class MainWindowController implements Initializable
     {
         if(event.getSource()==btn1)
             System.out.println("Weee");
+        
+        Patient pat = new Patient(3, 
+                "Patty", "patty@eml.com", "Crazy");
+        
+        bllManager.savePatient(pat);
     }
     
 }

@@ -8,6 +8,7 @@ package pkg3layerexamplepatient.DAL;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pkg3layerexamplepatient.BE.Patient;
@@ -46,5 +47,25 @@ public class CSVPatientReader implements PatientReader
             return null;
         }
     }
+
+    @Override
+    public void savePatient(Patient pat)
+    {
+        //DOne
+    }
+
+    @Override
+    public Patient getPatient(int id)
+    {
+        List<Patient> patients = getAllPatients();
+        for (Patient patient : patients)
+        {
+            if(patient.getId() == id)
+                return patient;
+        }
+        return null;
+    }
+    
+    
     
 }

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="489.0" prefWidth="471.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="carsales.gui.MainWindowController" />
+
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carsales.gui.MainWindowController">
+   <children>
+      <ListView fx:id="lstCars" layoutX="14.0" layoutY="14.0" prefHeight="462.0" prefWidth="444.0" />
+      <Button layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#clickLoadBtn" text="Load" />
+   </children>
+</AnchorPane>

@@ -20,13 +20,23 @@ public class DataManager {
     
     PatientReader preader;
     
-    public DataManager(PatientReader preader)
+    public DataManager()
     {
-        this.preader = preader;
+        this.preader = new CSVPatientReader();
     }
     
     public ObservableList<Patient> getAllPatients()
     {
         return preader.getAllPatients();
+    }
+
+    public void savePatient(Patient pat)
+    {
+        preader.savePatient(pat);
+    }
+    
+    public Patient getPatient(int id)
+    {
+        return preader.getPatient(id);
     }
 }

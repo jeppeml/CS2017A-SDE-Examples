@@ -5,12 +5,16 @@
  */
 package carsales.gui;
 
+import carsales.be.Car;
+import carsales.bll.BLLManager;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 /**
  *
@@ -18,18 +22,23 @@ import javafx.scene.control.Label;
  */
 public class MainWindowController implements Initializable {
     
-    @FXML
-    private Label label;
+    BLLManager bllManager = new BLLManager();
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private ListView<Car> lstCars;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void clickLoadBtn(ActionEvent event) {
+        List<Car> cars = bllManager.getAllCars();
+        
+        lstCars.getItems().clear();
+        lstCars.getItems().addAll(cars);
+       
+    }
     
 }

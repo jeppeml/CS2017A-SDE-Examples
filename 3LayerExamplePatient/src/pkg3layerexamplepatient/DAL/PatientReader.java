@@ -15,4 +15,6 @@ import pkg3layerexamplepatient.BE.Patient;
 public interface PatientReader
 {
     public ObservableList<Patient> getAllPatients();
+    public Patient getPatient(int id);
+    public void savePatient(Patient pat);
 }

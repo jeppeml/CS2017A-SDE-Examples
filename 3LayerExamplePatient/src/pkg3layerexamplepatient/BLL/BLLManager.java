@@ -17,10 +17,16 @@ import pkg3layerexamplepatient.DAL.TestReader;
  */
 public class BLLManager
 {
-    DataManager dm = new DataManager(new CSVPatientReader());
+    DataManager dm = new DataManager();
     
     public ObservableList<Patient> getAllPatients()
     {
         return dm.getAllPatients();
+    }
+
+    public void savePatient(Patient pat)
+    {
+        
+        dm.savePatient(pat);
     }
 }
