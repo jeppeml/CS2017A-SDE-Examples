@@ -6,14 +6,11 @@
 package carsales.gui;
 
 import carsales.be.Car;
-import carsales.bll.BLLManager;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 /**
@@ -21,24 +18,20 @@ import javafx.scene.control.ListView;
  * @author jeppjleemoritzled
  */
 public class MainWindowController implements Initializable {
-    
-    BLLManager bllManager = new BLLManager();
+    private CarModel carModel = new CarModel();
     
     @FXML
     private ListView<Car> lstCars;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Binding list in model with listview
+        lstCars.setItems(carModel.getCars());
     }    
 
     @FXML
     private void clickLoadBtn(ActionEvent event) {
-        List<Car> cars = bllManager.getAllCars();
-        
-        lstCars.getItems().clear();
-        lstCars.getItems().addAll(cars);
-       
+        carModel.loadCars();
     }
     
 }
