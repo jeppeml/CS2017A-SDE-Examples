@@ -18,4 +18,8 @@ public class BLLManager {
     public List<Car> getAllCars() {
         return carDAO.getAllCars();
     }
+
+    public void remove(Car car) {
+        carDAO.remove(car);
+    }
 }

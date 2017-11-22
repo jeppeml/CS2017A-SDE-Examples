@@ -33,4 +33,9 @@ public class CarModel {
         
     }
 
+    public void remove(Car selectedCar) {
+        cars.remove(selectedCar);
+        bllManager.remove(selectedCar);
+    }
+
 }

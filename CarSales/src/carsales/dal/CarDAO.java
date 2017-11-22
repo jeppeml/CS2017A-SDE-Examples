@@ -9,7 +9,6 @@ import carsales.be.Car;
 import java.util.ArrayList;
 import java.util.List;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,19 +18,12 @@ import java.util.logging.Logger;
  * @author jeppjleemoritzled
  */
 public class CarDAO {
+    ConnectionManager cm = new ConnectionManager();
 
     public List<Car> getAllCars() {
         List<Car> cars = new ArrayList();
-        SQLServerDataSource ds
-                = new SQLServerDataSource();
-
-        ds.setDatabaseName("CS2017A_39_CarDealer");
-        ds.setUser("CS2017A_39_java");
-        ds.setPassword("javajava");
-        ds.setServerName("EASV-DB2");
-        ds.setPortNumber(1433);
-
-        try (Connection con = ds.getConnection();) {
+        
+        try (Connection con = cm.getConnection();) {
             Statement stmt = con.createStatement();
             ResultSet rs
                     = stmt.executeQuery("SELECT * FROM Cars");
@@ -51,5 +43,17 @@ public class CarDAO {
         }
 
         return cars;
+    }
+
+    public void remove(Car car) {
+        try (Connection con = cm.getConnection();) {
+            Statement stmt = con.createStatement();
+            stmt.execute(
+                "DELETE FROM Cars WHERE id="+car.getId());
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(CarDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }
